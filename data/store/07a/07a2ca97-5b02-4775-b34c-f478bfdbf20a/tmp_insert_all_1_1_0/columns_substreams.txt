@@ -1,0 +1,41 @@
+columns substreams version: 1
+16 columns:
+1 substreams for column `user_id`:
+	user_id
+1 substreams for column `registration_date`:
+	registration_date
+3 substreams for column `country`:
+	country.dict_prefix
+	country.dict
+	country
+3 substreams for column `region`:
+	region.dict_prefix
+	region.dict
+	region
+3 substreams for column `city`:
+	city.dict_prefix
+	city.dict
+	city
+1 substreams for column `last_platform`:
+	last_platform
+1 substreams for column `user_type`:
+	user_type
+1 substreams for column `acquisition_channel`:
+	acquisition_channel
+1 substreams for column `age`:
+	age
+1 substreams for column `gender`:
+	gender
+2 substreams for column `is_verified`:
+	is_verified.sparse.idx
+	is_verified
+1 substreams for column `total_spent`:
+	total_spent
+1 substreams for column `rating`:
+	rating
+1 substreams for column `has_photo`:
+	has_photo
+1 substreams for column `all_items_count`:
+	all_items_count
+1 substreams for column `active_items_count`:
+	active_items_count

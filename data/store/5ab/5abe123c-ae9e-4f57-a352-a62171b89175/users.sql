@@ -1,0 +1,22 @@
+ATTACH TABLE _ UUID '07a2ca97-5b02-4775-b34c-f478bfdbf20a'
+(
+    `user_id` UInt64,
+    `registration_date` Date,
+    `country` LowCardinality(String),
+    `region` LowCardinality(String),
+    `city` LowCardinality(String),
+    `last_platform` Enum8('ios' = 1, 'android' = 2, 'web' = 3),
+    `user_type` Enum8('buyer' = 1, 'seller' = 2, 'business' = 3),
+    `acquisition_channel` Enum8('organic' = 1, 'ads' = 2, 'referral' = 3, 'seo' = 4, 'smm' = 5),
+    `age` UInt8,
+    `gender` Enum8('male' = 1, 'female' = 2),
+    `is_verified` UInt8,
+    `total_spent` UInt64,
+    `rating` Float32,
+    `has_photo` UInt8,
+    `all_items_count` UInt16,
+    `active_items_count` UInt16
+)
+ENGINE = MergeTree
+ORDER BY user_id
+SETTINGS index_granularity = 8192

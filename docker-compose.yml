@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: clickhouse
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+      - clickhouse_logs:/var/log/clickhouse-server
+    restart: unless-stopped
+    environment:
+      - CLICKHOUSE_USER=admin
+      - CLICKHOUSE_PASSWORD=password123
+
+  tabix:
+    image: spoonest/clickhouse-tabix-web-client
+    container_name: clickhouse-ui
+    ports:
+      - "8081:80"
+    depends_on:
+      - clickhouse
+
+volumes:
+  clickhouse_data:
+  clickhouse_logs:
